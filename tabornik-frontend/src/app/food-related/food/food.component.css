@@ -1,0 +1,22 @@
+.buttons {
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+}
+
+.row {
+    margin-top: 5px;
+}
+
+
+td:first-child, td:last-child {
+    vertical-align: middle;
+}
+
+button {
+    text-align: center;
+}
+
+.btn-default {
+    width: 100%;
+}

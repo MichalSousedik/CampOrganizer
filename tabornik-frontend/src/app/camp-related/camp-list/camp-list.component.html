@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row " style="display:flex;">
+    <div class="col-md-8">
+     <h1>Moje tábory</h1>
+    </div>
+    <div class="col-md-4 buttons">
+      <button routerLink="../create-camp" class="btn btn-default">
+        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+        Vytvořit tábor
+      </button>
+      <button routerLink="/search-camp" class="btn btn-default" style="margin-left: 5px" disabled>
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        Vyhledat tábor
+      </button>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+     <tr>
+       <th>
+         Tábor
+       </th>
+       <th>
+         Kapacita
+       </th>
+       <th>
+         Začátek
+       </th>
+       <th>
+         Konec
+       </th>
+     </tr>
+    </thead>
+    <tbody>
+      <tr class="clickable" *ngFor="let camp of camps" routerLink="/camp/{{camp.id}}/detail">
+        <td>{{camp.name}}</td>
+        <td>{{camp.occupied}}/{{camp.capacity}}</td>
+        <td>{{camp.startDate | date: 'dd. MM. yyyy' }}</td>
+        <td>{{camp.endDate | date: 'dd. MM. yyyy'}}</td>
+        <td>
+          <button (click)="removeCamp(camp.id, $event)" class="btn" style="padding: 0">
+            <span class="glyphicon glyphicon-remove"></span>
+            Zrušit účast
+          </button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

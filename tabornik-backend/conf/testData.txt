@@ -1,0 +1,55 @@
+//Child:
+{
+"id": 0,
+"name": "Jan Trenka",
+"age": 10,
+"nickname": "Trenik",
+"contact": "777888999",
+"parent": "Jana Trenkova",
+"paid": false,
+"campId": 7
+}
+
+{
+"id": 0,
+"name": "Patrik Dobis",
+"age": 10,
+"nickname": "Dob",
+"contact": "733533211",
+"parent": "Petr Dvorak",
+"paid": true,
+"campId": 7
+}
+
+{
+"id": 0,
+"name": "Jiri Andrs",
+"age": 11,
+"nickname": "Andy",
+"contact": "733533211",
+"parent": "Karel Treti",
+"paid": false,
+"campId": 7
+}
+
+{
+"id": 0,
+"name": "Tomas Andrs",
+"age": 9,
+"nickname": "ABoy",
+"contact": "930222001",
+"parent": "Karel Treti",
+"paid": false,
+"campId": 7
+}
+
+
+//CampWorker:
+{
+  "campId" : 7,
+  "workerId" : 1,
+  "position" : "Vedouci",
+  "pending" : true
+}
+
+

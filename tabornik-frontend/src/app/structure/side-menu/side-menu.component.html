@@ -1,0 +1,17 @@
+<div class="side-menu" *ngIf="loaded">
+ <div class="link head">
+   <a routerLink="detail" routerLinkActive="active">{{camp.camp.name}}</a>
+ </div>
+  <div class="link">
+    <a routerLink="workers" routerLinkActive="active">Pracovníci</a>
+  </div>
+  <div class="link">
+    <a routerLink="children">Dětí</a>
+  </div>
+  <div class="link">
+    <a routerLink="schedule">Harmonogram</a>
+  </div>
+  <div class="link">
+    <a routerLink="food">Jídelníček</a>
+  </div>
+</div>

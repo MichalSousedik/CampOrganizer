@@ -1,0 +1,34 @@
+<div class="container" *ngIf="pendings.length > 0">
+  <h1>Žadatelé</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        Jméno
+      </th>
+      <th>
+        Věk
+      </th>
+      <th>
+        Přezdívka
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pending of pendings">
+      <td>{{pending.name}}</td>
+      <td>{{pending.age}}</td>
+      <td>{{pending.nickname}}</td>
+      <td>
+        <button (click)="addPending(pending)" class="btn" style="padding: 0;" title="Přijmout">
+          <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button (click)="removePending(pending, $event)" class="btn" style="padding: 0; margin-left: 5px" title="Odmítnout">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+</div>

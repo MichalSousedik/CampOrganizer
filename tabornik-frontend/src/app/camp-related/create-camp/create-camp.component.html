@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row " style="display:flex;">
+    <div class="col-md-8">
+      <h1>Vytvořit tábor</h1>
+    </div>
+  </div>
+  <div style="margin-bottom: 10px">
+    <small style="font-weight: bold">* Veškeré údaje jsou povinné</small>
+  </div>
+  <form #f="ngForm" (ngSubmit)="f.form.valid && createCamp()" novalidate>
+    <div class="form-group">
+      <label>Název táboru</label>
+      <input class="form-control" type="text" #nameRef="ngModel" placeholder="Narcos camp" name="name" [ngClass]="{'is-invalid': nameRef.touched && nameRef.invalid}" [(ngModel)]="camp.name" required>
+      <small [hidden]="nameRef.valid || !nameRef.touched" class="text-danger">
+         Vyplňte jméno táboru
+      </small>
+    </div>
+    <div class="form-group">
+      <label>Adresa</label>
+      <input class="form-control" placeholder="La Columbia" name="address" #adressRef="ngModel" [ngClass]="{'is-invalid': adressRef.touched && adressRef.invalid}" [(ngModel)]="camp.address" required/>
+      <small [hidden]="adressRef.valid || !adressRef.touched" class="text-danger">
+        Vyplňte adresu táboru
+      </small>
+    </div>
+    <div class="form-group">
+      <label>Kapacita</label>
+      <input type="number" class="form-control" name="capacity" #capacityRef="ngModel" min="1" [ngClass]="{'is-invalid': capacityRef.touched && capacityRef.invalid}" [(ngModel)]="camp.capacity" required/>
+      <small [hidden]="(capacityRef.valid || !capacityRef.touched)" class="text-danger">
+        Vyplňte kapacitu táboru
+      </small>
+      <div [hidden]="capacityError === false">
+        <small class="text-danger">
+          Kapacita je méně než 1
+        </small>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="form-group col-md-6">
+        <label>Začátek táboru</label>
+        <input class="form-control" type="date" name="startDate" [(ngModel)]="camp.startDate" required/>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Konec táboru</label>
+        <input class="form-control" type="date" name="endDate" [(ngModel)]="camp.endDate" required/>
+      </div>
+      <div [hidden]="dateError === false">
+        <small class="text-danger">
+          Tábor končí dříve než začíná
+        </small>
+      </div>
+    </div>
+
+    <button class="btn btn-default" [disabled]="f.invalid">
+      Vytvořit tábor
+    </button>
+  </form>
+</div>
+

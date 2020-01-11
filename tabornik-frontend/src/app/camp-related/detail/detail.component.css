@@ -1,0 +1,18 @@
+.content {
+  width: 50%;
+  text-align: center;
+}
+
+.row {
+  padding-top: 8px;
+  font-size: 13pt;
+}
+
+.right{
+  text-align: left;
+  font-weight: bold;
+}
+
+.left{
+  text-align: right;
+}

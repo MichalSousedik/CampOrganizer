@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row" style="display:flex;">
+    <div class="col-md-8">
+      <h1>Děti</h1>
+    </div>
+    <div class="col-md-4 buttons">
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        Jméno
+      </th>
+      <th>
+        Věk
+      </th>
+      <th>
+        Přezdívka
+      </th>
+      <th>
+        Zákonný zástupce
+      </th>
+      <th>
+        Kontakt - telefon
+      </th>
+      <th>
+        Zaplaceno
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let child of children">
+      <td>{{child.name}}</td>
+      <td>{{child.age}}</td>
+      <td>{{child.nickname}}</td>
+      <td>{{child.parent}}</td>
+      <td>{{child.contact}}</td>
+      <td>{{child.paid ? 'Ano' : 'Ne'}}</td>
+      <td>
+        <button (click)="edit(child)" class="btn" style="padding: 0; margin-left: 5px" title="Upravit">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </button>
+        <button (click)="remove(child.id, $event)" class="btn" style="padding: 0; margin-left: 5px" title="Odebrat z táboru">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+</div>

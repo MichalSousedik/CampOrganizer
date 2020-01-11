@@ -1,0 +1,40 @@
+<div class="container content" *ngIf="loaded">
+
+  <h1>{{camp.name}}</h1>
+  <h3>{{camp.startDate | date: 'dd. MM. yyyy' }} -
+    {{camp.endDate | date: 'dd. MM. yyyy' }}</h3>
+  <div class="row">
+    <div class="col-md-6 right">
+      Místo konání
+    </div>
+    <div class="col-md-6 left">
+      {{camp.address}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 right">
+      Vedoucí pracovník
+    </div>
+    <div class="col-md-6 left">
+      {{campDetail.leader}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 right">
+      Zástupcé vedoucího pracovníka
+    </div>
+    <div class="col-md-6 left">
+      {{campDetail.backup}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 right">
+      Zdravotník
+    </div>
+    <div class="col-md-6 left">
+      {{campDetail.medic}}
+    </div>
+  </div>
+</div>

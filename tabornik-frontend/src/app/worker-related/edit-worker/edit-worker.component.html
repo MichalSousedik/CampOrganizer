@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Upravit pracovníka</h2>
+<mat-dialog-content>
+  <div class="form-group" style="width: 300px;">
+    <label for="camp">Pozice</label>
+    <select class="form-control" id="camp" name="position" [(ngModel)]="position">
+      <option value=""></option>
+      <option value="Vedoucí">Vedoucí</option>
+      <option value="Kuchař">Kuchař</option>
+      <option value="Zdravotník">Zdravotník</option>
+      <option value="Zástupce vedoucího">Zástupce vedoucího</option>
+    </select>
+  </div>
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button class="btn btn-default" [mat-dialog-close]="position">Upravit</button>
+  <button class="btn btn-default" [mat-dialog-close]="data.position" style="margin-left: 10px">Zrušit</button>
+</mat-dialog-actions>

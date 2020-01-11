@@ -1,0 +1,34 @@
+.side-menu{
+  border: 1.5px solid #000000;
+  border-top: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 5.1em;
+  width: 15%;
+}
+
+
+.link {
+  text-align: center;
+  padding: 10px 0 0px 0;
+
+}
+
+.head {
+  border-right: 0.5px solid #000000;
+  border-bottom: 1.5px solid #000000;
+  padding: 10px 0 10px 0;
+  font-size: 20px;
+  background-color: darkgray;
+}
+
+
+a {
+  color: #000000;
+}
+
+.active {
+  text-decoration: underline;
+}
+

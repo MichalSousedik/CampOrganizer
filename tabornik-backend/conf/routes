@@ -1,0 +1,18 @@
+
+GET           /camp                                controllers.CampController.list
+POST          /camp                                controllers.CampController.create()
+DELETE        /camp/:id                            controllers.CampController.delete(id:Int)
+GET           /camp/:id                            controllers.CampController.get(id:Int)
+
+
+GET           /campWorker/:campId/pending          controllers.CampWorkerController.listPending(campId:Int)
+GET           /campWorker/:campId/current          controllers.CampWorkerController.listCurrent(campId:Int)
+POST          /campWorker                          controllers.CampWorkerController.create()
+PUT           /campWorker                          controllers.CampWorkerController.update()
+DELETE        /campWorker/:campId/:workerId        controllers.CampWorkerController.delete(campId:Int, workerId:Int)
+
+
+GET           /camp/:id/child                      controllers.ChildController.list(id:Int)
+DELETE        /child/:id                           controllers.ChildController.delete(id: Int)
+PUT           /child                               controllers.ChildController.update()
+POST          /child                               controllers.ChildController.create()

@@ -1,0 +1,11 @@
+Insert into  WORKER ( NAME, AGE, NICKNAME)
+values ('Petr Kadlec', 25, 'Kadli')
+Insert into  WORKER ( NAME, AGE, NICKNAME)
+values ('Josef Novák', 20, 'Pepis')
+Insert into  WORKER ( NAME, AGE, NICKNAME)
+values ('Martin Patek', 25, 'Koudelka')
+Insert into  WORKER ( NAME, AGE, NICKNAME)
+values ('Karel Tomek', 18, 'Toms')
+Insert into  WORKER ( NAME, AGE, NICKNAME)
+values ('Lubomir Krajik', 20, 'Lubic')
+

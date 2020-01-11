@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row" style="display:flex;">
+    <div class="col-md-8">
+      <h1>Kopírovat pracovníky z jiného táboru</h1>
+    </div>
+    <div class="col-md-4 buttons">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="camp">Ze kterého táboru kopírovat?</label>
+    <select (change)="campChanged()" class="form-control" id="camp" style="width: 20%" name="campId" [(ngModel)]="campId">
+      <option value="" disabled></option>
+      <option *ngFor="let camp of camps" [value]="camp.id" >{{camp.name}}</option>
+    </select>
+  </div>
+
+
+
+  <div *ngIf="workers.length > 0">
+
+    <button (click)="copy()" class="btn btn-default">Kopírovat vše</button>
+
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>
+          Jméno
+        </th>
+        <th>
+          Věk
+        </th>
+        <th>
+          Přezdívka
+        </th>
+        <th>
+          Pozice
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let worker of workers">
+        <td>{{worker.name}}</td>
+        <td>{{worker.age}}</td>
+        <td>{{worker.nickname}}</td>
+        <td>{{worker.position}}</td>
+        <td>
+          <button (click)="edit(worker)" class="btn" style="padding: 0; margin-left: 5px" title="Upravit pozici">
+            <span class="glyphicon glyphicon-edit"></span>
+          </button>
+          <button (click)="remove(worker.id)" class="btn" style="padding: 0; margin-left: 5px" title="Odebrat z táboru">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+
+    </table>
+  </div>
+  <div *ngIf="workers.length === 0 && campId !== undefined">
+    Žádní pracovníci k výběru
+  </div>
+
+</div>

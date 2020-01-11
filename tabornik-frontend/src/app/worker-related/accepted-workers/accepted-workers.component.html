@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row " style="display:flex;">
+    <div class="col-md-8">
+      <h1>Pracovníci</h1>
+    </div>
+    <div class="col-md-4 buttons">
+      <button routerLink="../add-worker" class="btn btn-default" disabled>
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        Přidat pracovníka
+      </button>
+      <button routerLink="../copy-workers" class="btn btn-default" style="margin-left: 5px">
+        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+        Kopírovat pracovníky z jiného táboru
+      </button>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        Jméno
+      </th>
+      <th>
+        Věk
+      </th>
+      <th>
+        Přezdívka
+      </th>
+      <th>
+        Pozice
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let accepted of accepteds">
+      <td>{{accepted.name}}</td>
+      <td>{{accepted.age}}</td>
+      <td>{{accepted.nickname}}</td>
+      <td>{{accepted.position}}</td>
+      <td>
+        <button (click)="edit(accepted)" class="btn" style="padding: 0; margin-left: 5px" title="Upravit">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </button>
+        <button (click)="remove(accepted, $event)" class="btn" style="padding: 0; margin-left: 5px" title="Odebrat z táboru">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+</div>
